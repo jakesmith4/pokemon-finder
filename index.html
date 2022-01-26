@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon Finder</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="css/normalize.css" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <h2>Pokemon Finder</h2>
+    </nav>
+
+    <div class="alert-container"></div>
+
+    <form class="form">
+      <label for="searchPokemon" class="form-label"
+        >Search For ANY Pokemon</label
+      >
+      <input
+        type="text"
+        name="pokemon"
+        id="searchPokemon"
+        class="form-input"
+        placeholder="Search pokemon by name or number"
+      />
+      <button type="button" class="btn btn-show">Show All Pokemon</button>
+    </form>
+    <div class="section-center">
+      <div id="profile" class="container"></div>
+    </div>
+    <!-- JavaScript -->
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>
