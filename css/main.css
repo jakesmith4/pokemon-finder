@@ -219,10 +219,12 @@ img {
   width: 90vw;
   max-width: var(--fixedWidth);
   background: var(--white);
-  border-radius: var(--borderRadius);
+  /* border-radius: var(--borderRadius); */
+  border-radius: 30px;
   box-shadow: var(--shadow-2);
   padding: 2rem 2.5rem;
   margin: 1rem auto 3rem;
+  border: 2px solid #222;
 }
 
 .form-label {
@@ -305,6 +307,7 @@ Main CSS
 h2 {
   background: var(--primary-500);
   padding: 0.5rem;
+  border-bottom: 3px solid #222;
 }
 
 .alert-container {
