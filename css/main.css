@@ -335,23 +335,16 @@ input::placeholder {
   justify-content: center;
 }
 
-.container > article {
-  margin-right: 1rem;
-}
-
-.container > article:nth-child(even) {
-  margin-right: 0;
-}
-
 @media screen and (min-width: 576px) {
   .container > article {
     flex: 0 0 calc(50% - 2rem);
+    margin-right: 1rem;
   }
 }
 
 @media screen and (min-width: 992px) {
   .container > article {
-    flex: 0 0 calc(33.333% - 3rem);
+    flex: 0 0 calc(33.333% - 2rem);
   }
   .container > article:nth-child(even) {
     margin-right: 1rem;
@@ -367,7 +360,7 @@ input::placeholder {
 /* Article */
 article {
   background: #48d0b0;
-  min-width: 350px;
+  min-width: 260px;
   border-radius: 40px;
   border: 2px solid #222;
   position: relative;
@@ -390,8 +383,9 @@ article h4 {
 article .poke-number {
   color: var(--white);
   position: absolute;
-  top: 3.8rem;
-  right: 3rem;
+  top: 5rem;
+  right: 1.6rem;
+  font-weight: bold;
 }
 
 article .poke-type {
