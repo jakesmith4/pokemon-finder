@@ -443,7 +443,7 @@ article .poke-type-2:empty {
 
 .poke-list span {
   font-weight: bold;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   display: inline-block;
   color: var(--primary-400);
   font-style: italic;
