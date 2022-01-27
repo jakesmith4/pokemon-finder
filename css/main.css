@@ -360,7 +360,7 @@ input::placeholder {
 /* Article */
 article {
   background: #48d0b0;
-  min-width: 260px;
+  min-width: 280px;
   border-radius: 40px;
   border: 2px solid #222;
   position: relative;
