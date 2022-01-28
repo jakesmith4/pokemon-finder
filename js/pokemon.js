@@ -13,7 +13,7 @@ class Pokemon {
         `https://pokeapi.co/api/v2/pokemon/${pokemon}/`
       );
       const allPokemonResponse = await fetch(
-        'https://pokeapi.co/api/v2/pokemon?limit=151'
+        'https://pokeapi.co/api/v2/pokemon?limit=50'
       );
 
       const pokemonData = await pokemonResponse.json();
