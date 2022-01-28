@@ -2,6 +2,7 @@ class UI {
   constructor() {
     this.container = document.querySelector('.container');
     this.container2 = document.querySelector('.container-2');
+    this.form = document.querySelector('.form');
   }
 
   // Show Pokemon
@@ -50,13 +51,17 @@ class UI {
   }
   // Change Article Background
   changeBackground(pokemonType, color, poke, color2) {
+    const pokemonInput = document.querySelector('#searchPokemon:focus');
     const article = document.querySelector('article');
     const stats = document.querySelectorAll('.stats');
     const pokeType = document.querySelectorAll('.poke-type');
     const pokeType2 = document.querySelectorAll('.poke-type-2');
     const type = poke.types[0].type.name;
     if (type === pokemonType) {
+      pokemonInput.style.outlineColor = color;
+      this.form.style.borderColor = color;
       article.style.background = color;
+      article.style.borderColor = color;
       stats.forEach((stat) => {
         stat.style.color = color;
       });
@@ -93,8 +98,8 @@ class UI {
 
   // Show All Pokemon
   showAllPokemon(allPokemon) {
-    this.clearPokemon();
-    console.log(allPokemon);
+    this.clearContainer();
+
     const input = document.querySelector('#searchPokemon');
     input.value = '';
     allPokemon.forEach((pokemon) => {
@@ -151,6 +156,7 @@ class UI {
     article.forEach((item) => {
       if (item.classList.contains(pokemonType)) {
         item.style.background = color;
+        item.style.borderColor = color;
         item.children[2].children[0].style.background = color2;
         item.children[2].children[1].style.background = color2;
         const list = [...item.children[4].children];
@@ -210,14 +216,25 @@ class UI {
   // Clear Alert Message
   clearAlert() {
     const currentAlert = document.querySelector('.alert');
+
     if (currentAlert) {
       currentAlert.remove();
     }
   }
 
+  // Clear Container
+  clearContainer() {
+    this.container.innerHTML = '';
+    this.form.style.borderColor = '#222';
+  }
+
   // Clear Pokemon
   clearPokemon() {
     this.container.innerHTML = '';
+    const form = document.querySelector('.form');
+    const pokemonInput = document.querySelector('#searchPokemon:focus');
+    form.style.borderColor = '#222';
+    pokemonInput.style.outlineColor = '#222';
   }
 }
 

@@ -21,12 +21,16 @@ searchPokemon.addEventListener('keyup', (e) => {
     // Make HTTP Call
     pokemon.getPokemon(userText).then((data) => {
       // Show Alert
-      ui.showAlert(
-        `Pokemon found: ${data.pokemonData.name.toUpperCase()}`,
-        'alert alert-success alert-box'
-      );
+      if (data) {
+        ui.showAlert(
+          `Pokemon found: ${data.pokemonData.name.toUpperCase()}`,
+          'alert alert-success alert-box'
+        );
+      }
       // Show Profile
-      ui.showPokemon(data.pokemonData);
+      if (data) {
+        ui.showPokemon(data.pokemonData);
+      }
     });
   } else {
     // Clear Pokemon
