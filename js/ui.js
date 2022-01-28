@@ -114,7 +114,7 @@ class UI {
       <div class="article-img-container">
         <img src="${
           data.sprites.other['official-artwork'].front_default
-        }" class="article-img" alt="${data.name}">
+        }" class="article-img" loading="lazy" alt="${data.name}">
         </div>
         <div class="pokemon-stats">
         <ul class="poke-list">
