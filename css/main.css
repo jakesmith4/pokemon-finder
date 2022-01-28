@@ -398,15 +398,20 @@ article .poke-number {
   font-weight: bold;
 }
 
+.span-control {
+  text-align: left;
+  margin-left: 2rem;
+}
+
 article .poke-type {
   color: var(--white);
   background: #61e0c9;
   padding: 1px 15px;
   border-radius: 20px;
-  position: absolute;
-  left: 2rem;
   font-size: 0.9rem;
   font-weight: bold;
+  display: inline-block;
+  text-align: left;
 }
 
 article .poke-type-2 {
@@ -414,11 +419,9 @@ article .poke-type-2 {
   background: #61e0c9;
   padding: 1px 15px;
   border-radius: 20px;
-  position: absolute;
-  left: 2rem;
-  margin-left: 5rem;
   font-size: 0.9rem;
   font-weight: bold;
+  display: inline-block;
 }
 
 article .poke-type-2:empty {
@@ -455,7 +458,7 @@ article .poke-type-2:empty {
   font-weight: bold;
   margin-left: 0.5rem;
   display: inline-block;
-  color: var(--primary-400);
+  /* color: var(--primary-400); */
   font-style: italic;
   text-transform: capitalize;
 }

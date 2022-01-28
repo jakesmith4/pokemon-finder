@@ -6,15 +6,17 @@ class UI {
 
   // Show Pokemon
   showPokemon(pokemon) {
-    console.log(pokemon);
+    // console.log(pokemon);
     this.container.innerHTML = `
     <article>
       <h4>${pokemon.name}</h4>
       <span class="poke-number">#00${pokemon.id}</span>
+      <div class="span-control">
       <span class="poke-type">${pokemon.types[0].type.name}</span>
       <span class="poke-type-2">${
         pokemon.types[1] ? pokemon.types[1].type.name : ''
       }</span>
+      </div>
       <div class="article-img-container">
         <img src="${
           pokemon.sprites.other['official-artwork'].front_default
@@ -100,36 +102,86 @@ class UI {
         .then((response) => response.json())
         .then((data) => {
           this.container.innerHTML += `
-      <article class="poke-background">
+      <article class="poke-background ${data.types[0].type.name}">
       <h4>${pokemon.name}</h4>
       <span class="poke-number">#00${data.order}</span>
+      <div class="span-control">
       <span class="poke-type">${data.types[0].type.name}</span>
+      <span class="poke-type-2">${
+        data.types[1] ? data.types[1].type.name : ''
+      }</span>
+      </div>
       <div class="article-img-container">
-        <img src="${data.sprites.other['official-artwork'].front_default}" class="article-img" alt="${data.name}">
+        <img src="${
+          data.sprites.other['official-artwork'].front_default
+        }" class="article-img" alt="${data.name}">
         </div>
         <div class="pokemon-stats">
         <ul class="poke-list">
         <li>Weight:</li>
-        <li><span>${data.weight} lbs</span></li>
+        <li class="stat"><span>${data.weight} lbs</span></li>
         </ul>
         <ul class="poke-list">
         <li>Height:</li>
-        <li><span>${data.height}</span></li>
+        <li class="stat"><span>${data.height}</span></li>
         </ul>
         <ul class="poke-list">
         <li>Abilites:</li>
-        <li><span>${data.abilities[0].ability.name}</span></li>
+        <li class="stat"><span>${data.abilities[0].ability.name}</span></li>
         </ul>
         <ul class="poke-list">
         <li>Base Experience:</li>
-        <li><span>${data.base_experience}</span></li>
+        <li class="stat"><span>${data.base_experience}</span></li>
         </ul>
         </div>
       </article>
             `;
+
+          // Select All Articles
+          const article = document.querySelectorAll('article');
+
+          // Set All Pokemon Colors
+          this.setAllPokemonColors(article);
         });
     });
-    // console.log(output);
+  }
+
+  // Change Pokemon Colors
+  changePokemonColors(article, pokemonType, color, color2) {
+    article.forEach((item) => {
+      if (item.classList.contains(pokemonType)) {
+        item.style.background = color;
+        item.children[2].children[0].style.background = color2;
+        item.children[2].children[1].style.background = color2;
+        const list = [...item.children[4].children];
+        list.forEach((element) => {
+          console.log(element);
+          element.children[1].style.color = color;
+        });
+      }
+    });
+  }
+
+  // Set All Pokemon Colors
+  setAllPokemonColors(article) {
+    this.changePokemonColors(article, 'grass', '#7AC74C', '#95d270');
+    this.changePokemonColors(article, 'ice', '#96D9D6', '#abe1de');
+    this.changePokemonColors(article, 'water', '#61e0c9', '#81e6d4');
+    this.changePokemonColors(article, 'bug', '#79ff6f', '#94ff8c');
+    this.changePokemonColors(article, 'electric', '#ffd86f', '#ffe08c');
+    this.changePokemonColors(article, 'fire', '#fb6c6c', '#f88c8c');
+    this.changePokemonColors(article, 'normal', '#A8A77A', '#b9b995');
+    this.changePokemonColors(article, 'ground', '#E2BF65', '#e8cc84');
+    this.changePokemonColors(article, 'fighting', '#C22E28', '#ce5853');
+    this.changePokemonColors(article, 'poison', '#A33EA1', '#b565b4');
+    this.changePokemonColors(article, 'flying', '#A98FF3', '#baa5f5');
+    this.changePokemonColors(article, 'psychic', '#F95587', '#fa779f');
+    this.changePokemonColors(article, 'rock', '#B6A136', '#c5b45e');
+    this.changePokemonColors(article, 'ghost', '#735797', '#8f79ac');
+    this.changePokemonColors(article, 'dragon', '#6F35FC', '#8c5dfd');
+    this.changePokemonColors(article, 'dark', '#705746', '#8d796b');
+    this.changePokemonColors(article, 'steel', '#B7B7CE', '#c5c5d8');
+    this.changePokemonColors(article, 'fairy', '#D685AD', '#de9dbd');
   }
 
   // Show Alert Message
