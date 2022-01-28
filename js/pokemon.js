@@ -7,13 +7,13 @@ class Pokemon {
   constructor() {}
 
   // Get Pokemon
-  async getPokemon(pokemon) {
+  async getPokemon(pokemon, number) {
     try {
       const pokemonResponse = await fetch(
         `https://pokeapi.co/api/v2/pokemon/${pokemon}/`
       );
       const allPokemonResponse = await fetch(
-        'https://pokeapi.co/api/v2/pokemon?limit=151'
+        `https://pokeapi.co/api/v2/pokemon?limit=${number}`
       );
 
       const pokemonData = await pokemonResponse.json();

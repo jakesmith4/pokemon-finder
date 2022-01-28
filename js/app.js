@@ -36,8 +36,12 @@ searchPokemon.addEventListener('keyup', (e) => {
 
 btn.addEventListener('click', (e) => {
   e.preventDefault();
-  pokemon.getPokemon('pikachu').then((data) => {
-    ui.showAlert('Showing: ALL POKEMON', 'alert alert-success alert-box');
+  const numberInput = getElement('#number');
+  pokemon.getPokemon('pikachu', numberInput.value).then((data) => {
+    ui.showAlert(
+      `Showing: ${numberInput.value} POKEMON`,
+      'alert alert-success alert-box'
+    );
     ui.showAllPokemon(data.allPokemonData.results);
   });
 });

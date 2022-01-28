@@ -155,7 +155,6 @@ class UI {
         item.children[2].children[1].style.background = color2;
         const list = [...item.children[4].children];
         list.forEach((element) => {
-          console.log(element);
           element.children[1].style.color = color;
         });
       }
