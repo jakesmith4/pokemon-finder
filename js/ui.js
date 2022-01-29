@@ -3,7 +3,6 @@ class UI {
     this.container = document.querySelector('.container');
     this.container2 = document.querySelector('.container-2');
     this.form = document.querySelector('.form');
-    console.log(this.pokemonInput);
     this.navbar = document.querySelector('.navbar');
     this.navHeading = document.querySelector('.nav-heading');
     this.numberInput = document.querySelector('#number');
@@ -11,7 +10,7 @@ class UI {
 
   // Show Pokemon
   showPokemon(pokemon) {
-    // console.log(pokemon);
+    console.log(pokemon);
     this.container.innerHTML = `
     <article>
       <h4>${pokemon.name}</h4>
@@ -28,31 +27,162 @@ class UI {
         }" class="article-img" alt="${pokemon.name}">
         </div>
         <div class="pokemon-stats">
+        <div class="tab-container">
+
+        <span class="tab">About</span>
+        <span class="tab">Stats</span>
+        <span class="tab">Moves</span>
+        </div>
+        <div class="stats-container">
+
         <ul class="poke-list">
         <li>Weight:</li>
-        <li><span class="stats">${pokemon.weight} lbs</span></li>
-        </ul>
-        <ul class="poke-list">
-        <li>Height:</li>
-        <li><span class="stats">${pokemon.height}</span></li>
-        </ul>
-        <ul class="poke-list">
-        <li>Abilites:</li>
-        <li><span class="stats">${pokemon.abilities[0].ability.name}</span></li>
-        <li><span class="stats">${
-          pokemon.abilities[1] ? pokemon.abilities[1].ability.name : ''
-        }</span></li>
-        </ul>
-        <ul class="poke-list">
-        <li>Base Experience:</li>
-        <li><span class="stats">${pokemon.base_experience}</span></li>
-        </ul>
+        <li><span class="stats">${Math.floor(
+          pokemon.weight * 0.2248
+        )} lbs</span></li>
+          </ul>
+          <ul class="poke-list">
+          <li>Height:</li>
+          <li><span class="stats">${pokemon.height}</span></li>
+          </ul>
+          <ul class="poke-list">
+          <li>Abilites:</li>
+          <li><span class="stats">${
+            pokemon.abilities[0].ability.name
+          },</span></li>
+          <li><span class="stats">${
+            pokemon.abilities[1] ? pokemon.abilities[1].ability.name : ''
+          },</span></li>
+          <li><span class="stats">${
+            pokemon.abilities[2] ? pokemon.abilities[2].ability.name : ''
+          }</span></li>
+          </ul>
+          <ul class="poke-list">
+          <li>Base Experience:</li>
+          <li><span class="stats">${pokemon.base_experience}</span></li>
+          </ul>
+          </div>
         </div>
       </article>
     `;
-
     this.changeAllBackgrounds(pokemon);
+    // Select All Tabs
+    const tabBtns = document.querySelectorAll('.tab');
+
+    tabBtns.forEach((tab) => {
+      tab.addEventListener('click', (e) => {
+        if (e.currentTarget.textContent === 'About') {
+          tabBtns[0].style.borderColor = '#222';
+          tabBtns[1].style.borderColor = 'transparent';
+          tabBtns[2].style.borderColor = 'transparent';
+
+          const statsContainer = document.querySelector('.stats-container');
+          statsContainer.innerHTML = `
+          <ul class="poke-list">
+        <li>Weight:</li>
+        <li><span class="stats">${Math.floor(
+          pokemon.weight * 0.2248
+        )} lbs</span></li>
+          </ul>
+          <ul class="poke-list">
+          <li>Height:</li>
+          <li><span class="stats">${pokemon.height}</span></li>
+          </ul>
+          <ul class="poke-list">
+          <li>Abilites:</li>
+          <li><span class="stats">${
+            pokemon.abilities[0].ability.name
+          },</span></li>
+          <li><span class="stats">${
+            pokemon.abilities[1] ? pokemon.abilities[1].ability.name : ''
+          },</span></li>
+          <li><span class="stats">${
+            pokemon.abilities[2] ? pokemon.abilities[2].ability.name : ''
+          }</span></li>
+          </ul>
+          <ul class="poke-list">
+          <li>Base Experience:</li>
+          <li><span class="stats">${pokemon.base_experience}</span></li>
+          </ul>
+          `;
+        }
+
+        if (e.currentTarget.textContent === 'Stats') {
+          tabBtns[0].style.borderColor = 'transparent';
+          tabBtns[1].style.borderColor = '#222';
+          tabBtns[2].style.borderColor = 'transparent';
+          const statsContainer = document.querySelector('.stats-container');
+          statsContainer.innerHTML = `
+          <ul class="poke-list">
+        <li>${pokemon.stats[0].stat.name.toUpperCase()}</li>
+        <li><span class="stats">${pokemon.stats[0].base_stat}</span></li>
+          </ul>
+          <ul class="poke-list">
+          <li>${pokemon.stats[1].stat.name.toUpperCase()}</li>
+          <li><span class="stats">${pokemon.stats[1].base_stat}</span></li>
+          </ul>
+          <ul class="poke-list">
+          <li>${pokemon.stats[2].stat.name.toUpperCase()}</li>
+          <li><span class="stats">${pokemon.stats[2].base_stat}</span></li>
+          
+          
+          </ul>
+          <ul class="poke-list">
+          <li>${pokemon.stats[3].stat.name.toUpperCase()}</li>
+          <li><span class="stats">${pokemon.stats[3].base_stat}</span></li>
+          </ul>
+          <ul class="poke-list">
+          <li>${pokemon.stats[4].stat.name.toUpperCase()}</li>
+          <li><span class="stats">${pokemon.stats[4].base_stat}</span></li>
+          </ul>
+          <ul class="poke-list">
+          <li>${pokemon.stats[5].stat.name.toUpperCase()}</li>
+          <li><span class="stats">${pokemon.stats[5].base_stat}</span></li>
+          </ul>
+          `;
+        }
+
+        if (e.currentTarget.textContent === 'Moves') {
+          tabBtns[0].style.borderColor = 'transparent';
+          tabBtns[1].style.borderColor = 'transparent';
+          tabBtns[2].style.borderColor = '#222';
+          const statsContainer = document.querySelector('.stats-container');
+          statsContainer.innerHTML = `
+          <ul class="poke-list">
+        
+        <li><span class="stats">${pokemon.moves[0].move.name}</span></li>
+          </ul>
+          <ul class="poke-list">
+          <li><span class="stats">${
+            pokemon.moves[1] ? pokemon.moves[1].move.name : ''
+          }</span></li>
+          </ul>
+          <ul class="poke-list">
+          <li><span class="stats">${
+            pokemon.moves[2] ? pokemon.moves[2].move.name : ''
+          }</span></li>
+          </ul>
+          <ul class="poke-list">
+          <li><span class="stats">${
+            pokemon.moves[3] ? pokemon.moves[3].move.name : ''
+          }</span></li>
+          </ul>
+          <ul class="poke-list">
+          <li><span class="stats">${
+            pokemon.moves[4] ? pokemon.moves[4].move.name : ''
+          }</span></li>
+          </ul>
+          <ul class="poke-list">
+          <li><span class="stats">${
+            pokemon.moves[5] ? pokemon.moves[5].move.name : ''
+          }</span></li>
+          </ul>
+          `;
+        }
+      });
+    });
   }
+
   // Change Article Background
   changeBackground(pokemonType, color, poke, color2) {
     const pokemonInput = document.querySelector('#searchPokemon:focus');
@@ -133,7 +263,9 @@ class UI {
         <div class="pokemon-stats">
         <ul class="poke-list">
         <li>Weight:</li>
-        <li class="stat"><span>${data.weight} lbs</span></li>
+        <li class="stat"><span>${Math.floor(
+          data.weight * 0.2248
+        )} lbs</span></li>
         </ul>
         <ul class="poke-list">
         <li>Height:</li>
