@@ -232,6 +232,11 @@ class UI {
   clearContainer() {
     this.container.innerHTML = '';
     this.form.style.borderColor = '#222';
+    this.navbar.style.borderColor = '#222';
+    this.navHeading.style.background = '#ffde00';
+    this.navHeading.style.borderColor = '#3b4cca';
+    this.navHeading.style.color = '#3b4cca';
+    this.navHeading.textContent = 'Finder';
   }
 
   // Clear Pokemon
