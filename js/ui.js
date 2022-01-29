@@ -150,7 +150,9 @@ class UI {
           statsContainer.innerHTML = `
           <ul class="poke-list">
         
-        <li><span class="stats">${pokemon.moves[0].move.name}</span></li>
+        <li><span class="stats">${
+          pokemon.moves[0] ? pokemon.moves[0].move.name : ''
+        }</span></li>
           </ul>
           <ul class="poke-list">
           <li><span class="stats">${
