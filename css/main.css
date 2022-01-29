@@ -5,7 +5,8 @@
 }
 
 /* Fonts Import */
-@import url('https://fonts.googleapis.com/css?family=Karla:400|Spectral:400');
+
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
 
 html {
   font-size: 100%;
@@ -22,6 +23,8 @@ html {
   --primary-700: #0c7a3a;
   --primary-800: #085226;
   --primary-900: #042913;
+  --pokemon-yellow: #ffde00;
+  --pokemon-blue: #3b4cca;
   /* Grey Colors */
   --grey-50: #f8fafc;
   --grey-100: #f1f5f9;
@@ -40,8 +43,8 @@ html {
   --green-light: #d1e7dd;
   --green-dark: #0f5132;
   /* Fonts */
-  --headingFont: 'Spectral', serif;
-  --bodyFont: 'Karla', sans-serif;
+  --headingFont: 'Neucha', cursive;
+  --bodyFont: 'Neucha', cursive;
   --smallText: 0.8rem;
   --backgroundColor: var(--grey-50);
   --textColor: var(--grey-900);
@@ -304,10 +307,26 @@ img {
 Main CSS
 =============
 */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemon-logo {
+  width: 130px;
+}
+
 h2 {
-  background: var(--primary-500);
-  padding: 0.5rem;
-  border-bottom: 2px solid #222;
+  padding: 0 1rem;
+  font-size: 2rem;
+  margin-bottom: 0;
+  margin-left: 0.5rem;
+  margin-top: 0.4rem;
+  background: var(--pokemon-yellow);
+  color: var(--pokemon-blue);
+  border: 2px solid var(--pokemon-blue);
+  border-radius: var(--borderRadius);
 }
 
 .alert-container {
