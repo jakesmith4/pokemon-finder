@@ -3,8 +3,10 @@ class UI {
     this.container = document.querySelector('.container');
     this.container2 = document.querySelector('.container-2');
     this.form = document.querySelector('.form');
+    console.log(this.pokemonInput);
     this.navbar = document.querySelector('.navbar');
     this.navHeading = document.querySelector('.nav-heading');
+    this.numberInput = document.querySelector('#number');
   }
 
   // Show Pokemon
@@ -105,7 +107,7 @@ class UI {
 
   // Show All Pokemon
   showAllPokemon(allPokemon) {
-    this.clearContainer();
+    this.clearContainer(this.numberInput);
 
     const input = document.querySelector('#searchPokemon');
     input.value = '';
@@ -229,14 +231,15 @@ class UI {
   }
 
   // Clear Container
-  clearContainer() {
+  clearContainer(number) {
     this.container.innerHTML = '';
     this.form.style.borderColor = '#222';
+
     this.navbar.style.borderColor = '#222';
-    this.navHeading.style.background = '#ffde00';
-    this.navHeading.style.borderColor = '#ffe533';
+    this.navHeading.style.background = '#3b4cca';
+    this.navHeading.style.borderColor = '#6270d5';
     this.navHeading.style.color = '#fff';
-    this.navHeading.textContent = 'Finder';
+    this.navHeading.textContent = `${number.value} Pokemon`;
   }
 
   // Clear Pokemon
@@ -244,6 +247,7 @@ class UI {
     this.container.innerHTML = '';
     const form = document.querySelector('.form');
     const pokemonInput = document.querySelector('#searchPokemon:focus');
+
     form.style.borderColor = '#222';
     pokemonInput.style.outlineColor = '#222';
     this.navbar.style.borderColor = '#222';
