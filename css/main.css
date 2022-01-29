@@ -311,6 +311,9 @@ Main CSS
   display: flex;
   justify-content: center;
   align-items: center;
+  background: var(--primary-400);
+  border-bottom: 2px solid var(--pokemon-yellow);
+  margin-bottom: 0.3rem;
 }
 
 .pokemon-logo {
