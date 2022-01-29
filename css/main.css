@@ -6,7 +6,8 @@
 
 /* Fonts Import */
 
-@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
 
 html {
   font-size: 100%;
@@ -43,8 +44,8 @@ html {
   --green-light: #d1e7dd;
   --green-dark: #0f5132;
   /* Fonts */
-  --headingFont: 'Neucha', cursive;
-  --bodyFont: 'Neucha', cursive;
+  --headingFont: 'Pokemon Solid', sans-serif;
+  --bodyFont: 'Karla', sans-serif;
   --smallText: 0.8rem;
   --backgroundColor: var(--grey-50);
   --textColor: var(--grey-900);
