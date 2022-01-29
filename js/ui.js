@@ -234,8 +234,8 @@ class UI {
     this.form.style.borderColor = '#222';
     this.navbar.style.borderColor = '#222';
     this.navHeading.style.background = '#ffde00';
-    this.navHeading.style.borderColor = '#3b4cca';
-    this.navHeading.style.color = '#3b4cca';
+    this.navHeading.style.borderColor = '#ffe533';
+    this.navHeading.style.color = '#fff';
     this.navHeading.textContent = 'Finder';
   }
 
@@ -248,8 +248,8 @@ class UI {
     pokemonInput.style.outlineColor = '#222';
     this.navbar.style.borderColor = '#222';
     this.navHeading.style.background = '#ffde00';
-    this.navHeading.style.borderColor = '#3b4cca';
-    this.navHeading.style.color = '#3b4cca';
+    this.navHeading.style.borderColor = '#ffe533';
+    this.navHeading.style.color = '#fff';
     this.navHeading.textContent = 'Finder';
   }
 }

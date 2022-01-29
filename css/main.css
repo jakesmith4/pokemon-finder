@@ -328,8 +328,8 @@ h2 {
   margin-left: 0.5rem;
   margin-top: 0.4rem;
   background: var(--pokemon-yellow);
-  color: var(--pokemon-blue);
-  border: 2px solid var(--pokemon-blue);
+  color: #fff;
+  border: 2px solid #ffe533;
   border-radius: var(--borderRadius);
 }
 
