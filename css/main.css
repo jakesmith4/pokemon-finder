@@ -312,7 +312,7 @@ Main CSS
   justify-content: center;
   align-items: center;
   background: var(--primary-400);
-  border-bottom: 2px solid var(--pokemon-blue);
+  border-bottom: 2px solid #222;
   margin-bottom: 0.3rem;
 }
 

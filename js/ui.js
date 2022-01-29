@@ -3,6 +3,8 @@ class UI {
     this.container = document.querySelector('.container');
     this.container2 = document.querySelector('.container-2');
     this.form = document.querySelector('.form');
+    this.navbar = document.querySelector('.navbar');
+    this.navHeading = document.querySelector('.nav-heading');
   }
 
   // Show Pokemon
@@ -60,6 +62,11 @@ class UI {
     if (type === pokemonType) {
       pokemonInput.style.outlineColor = color;
       this.form.style.borderColor = color;
+      this.navbar.style.borderColor = color;
+      this.navHeading.style.background = color;
+      this.navHeading.style.borderColor = color2;
+      this.navHeading.style.color = '#fff';
+      this.navHeading.textContent = poke.name;
       article.style.background = color;
       article.style.borderColor = color;
       stats.forEach((stat) => {
@@ -201,10 +208,9 @@ class UI {
     div.appendChild(document.createTextNode(message));
     // Get Form Element
     const form = document.querySelector('.form');
-    // Insert Alert Before Form
-    // document.body.insertBefore(div, form);
     // Select Alert Container
     const alertContainer = document.querySelector('.alert-container');
+    // Append New Element To Alert Container
     alertContainer.appendChild(div);
 
     // Timeout After 3 Secs
@@ -235,6 +241,11 @@ class UI {
     const pokemonInput = document.querySelector('#searchPokemon:focus');
     form.style.borderColor = '#222';
     pokemonInput.style.outlineColor = '#222';
+    this.navbar.style.borderColor = '#222';
+    this.navHeading.style.background = '#ffde00';
+    this.navHeading.style.borderColor = '#3b4cca';
+    this.navHeading.style.color = '#3b4cca';
+    this.navHeading.textContent = 'Finder';
   }
 }
 

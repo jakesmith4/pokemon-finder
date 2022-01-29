@@ -26,9 +26,8 @@ searchPokemon.addEventListener('keyup', (e) => {
           `Pokemon found: ${data.pokemonData.name.toUpperCase()}`,
           'alert alert-success alert-box'
         );
-      }
-      // Show Profile
-      if (data) {
+
+        // Show Profile
         ui.showPokemon(data.pokemonData);
       }
     });
