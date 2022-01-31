@@ -1,3 +1,6 @@
+import { changeStatColors } from './changeStatColors.js';
+import { checkType } from './checkType.js';
+
 class UI {
   constructor() {
     this.container = document.querySelector('.container');
@@ -68,7 +71,7 @@ class UI {
     this.changeAllBackgrounds(pokemon);
     // Select All Tabs
     const tabBtns = document.querySelectorAll('.tab');
-
+    const type = pokemon.types[0].type.name;
     tabBtns.forEach((tab) => {
       tab.addEventListener('click', (e) => {
         if (e.currentTarget.textContent === 'About') {
@@ -105,6 +108,7 @@ class UI {
           <li><span class="stats">${pokemon.base_experience}</span></li>
           </ul>
           `;
+          checkType(type);
         }
 
         if (e.currentTarget.textContent === 'Stats') {
@@ -124,8 +128,6 @@ class UI {
           <ul class="poke-list">
           <li>${pokemon.stats[2].stat.name.toUpperCase()}</li>
           <li><span class="stats">${pokemon.stats[2].base_stat}</span></li>
-          
-          
           </ul>
           <ul class="poke-list">
           <li>${pokemon.stats[3].stat.name.toUpperCase()}</li>
@@ -140,6 +142,7 @@ class UI {
           <li><span class="stats">${pokemon.stats[5].base_stat}</span></li>
           </ul>
           `;
+          checkType(type);
         }
 
         if (e.currentTarget.textContent === 'Moves') {
@@ -180,6 +183,7 @@ class UI {
           }</span></li>
           </ul>
           `;
+          checkType(type);
         }
       });
     });
