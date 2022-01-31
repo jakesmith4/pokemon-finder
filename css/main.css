@@ -488,6 +488,7 @@ article .poke-type-2:empty {
 .tab-container {
   text-align: left;
   padding: 0 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .tab {
@@ -509,10 +510,8 @@ article .poke-type-2:empty {
   margin: 0 0 0.2rem 2rem;
   display: flex;
   flex-wrap: wrap;
-}
-
-.poke-list:first-child {
-  padding-top: 0.5rem;
+  align-items: center;
+  min-height: 29px;
 }
 
 .poke-list:last-child {
@@ -523,7 +522,27 @@ article .poke-type-2:empty {
 .poke-list span {
   font-weight: bold;
   margin-left: 0.5rem;
+  margin-right: 1rem;
   display: inline-block;
   font-style: italic;
   text-transform: capitalize;
+}
+
+.stat-bar {
+  width: 95%;
+  height: 9px;
+  position: relative;
+  background: #222;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.stat-bar span {
+  background: green;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 9px;
+  border-radius: 20px;
+  margin: 0;
 }

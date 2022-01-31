@@ -120,26 +120,44 @@ class UI {
           <ul class="poke-list">
         <li>${pokemon.stats[0].stat.name.toUpperCase()}</li>
         <li><span class="stats">${pokemon.stats[0].base_stat}</span></li>
+        <li class="stat-bar"><span class="span-bar" style="width:${
+          pokemon.stats[0].base_stat
+        }%"></span></li>
           </ul>
           <ul class="poke-list">
-          <li>${pokemon.stats[1].stat.name.toUpperCase()}</li>
+          <li>ATC</li>
           <li><span class="stats">${pokemon.stats[1].base_stat}</span></li>
+          <li class="stat-bar"><span class="span-bar" style="width:${
+            pokemon.stats[1].base_stat
+          }%"></span></li>
           </ul>
           <ul class="poke-list">
-          <li>${pokemon.stats[2].stat.name.toUpperCase()}</li>
+          <li>DEF</li>
           <li><span class="stats">${pokemon.stats[2].base_stat}</span></li>
+          <li class="stat-bar"><span class="span-bar" style="width:${
+            pokemon.stats[2].base_stat
+          }%"></span></li>
           </ul>
           <ul class="poke-list">
-          <li>${pokemon.stats[3].stat.name.toUpperCase()}</li>
+          <li>SATC</li>
           <li><span class="stats">${pokemon.stats[3].base_stat}</span></li>
+          <li class="stat-bar"><span class="span-bar" style="width:${
+            pokemon.stats[3].base_stat
+          }%"></span></li>
           </ul>
           <ul class="poke-list">
-          <li>${pokemon.stats[4].stat.name.toUpperCase()}</li>
+          <li>SDEF</li>
           <li><span class="stats">${pokemon.stats[4].base_stat}</span></li>
+          <li class="stat-bar"><span class="span-bar" style="width:${
+            pokemon.stats[4].base_stat
+          }%"></span></li>
           </ul>
           <ul class="poke-list">
-          <li>${pokemon.stats[5].stat.name.toUpperCase()}</li>
+          <li>SPD</li>
           <li><span class="stats">${pokemon.stats[5].base_stat}</span></li>
+          <li class="stat-bar"><span class="span-bar" style="width:${
+            pokemon.stats[5].base_stat
+          }%"></span></li>
           </ul>
           `;
           checkType(type);
