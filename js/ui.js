@@ -125,35 +125,35 @@ class UI {
         }%"></span></li>
           </ul>
           <ul class="poke-list">
-          <li>ATC</li>
+          <li>${pokemon.stats[1].stat.name.toUpperCase()}</li>
           <li><span class="stats">${pokemon.stats[1].base_stat}</span></li>
           <li class="stat-bar"><span class="span-bar" style="width:${
             pokemon.stats[1].base_stat
           }%"></span></li>
           </ul>
           <ul class="poke-list">
-          <li>DEF</li>
+          <li>${pokemon.stats[2].stat.name.toUpperCase()}</li>
           <li><span class="stats">${pokemon.stats[2].base_stat}</span></li>
           <li class="stat-bar"><span class="span-bar" style="width:${
             pokemon.stats[2].base_stat
           }%"></span></li>
           </ul>
           <ul class="poke-list">
-          <li>SATC</li>
+          <li>${pokemon.stats[3].stat.name.toUpperCase()}</li>
           <li><span class="stats">${pokemon.stats[3].base_stat}</span></li>
           <li class="stat-bar"><span class="span-bar" style="width:${
             pokemon.stats[3].base_stat
           }%"></span></li>
           </ul>
           <ul class="poke-list">
-          <li>SDEF</li>
+          <li>${pokemon.stats[4].stat.name.toUpperCase()}</li>
           <li><span class="stats">${pokemon.stats[4].base_stat}</span></li>
           <li class="stat-bar"><span class="span-bar" style="width:${
             pokemon.stats[4].base_stat
           }%"></span></li>
           </ul>
           <ul class="poke-list">
-          <li>SPD</li>
+          <li>${pokemon.stats[5].stat.name.toUpperCase()}</li>
           <li><span class="stats">${pokemon.stats[5].base_stat}</span></li>
           <li class="stat-bar"><span class="span-bar" style="width:${
             pokemon.stats[5].base_stat
