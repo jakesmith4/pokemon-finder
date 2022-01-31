@@ -152,32 +152,37 @@ class UI {
           const statsContainer = document.querySelector('.stats-container');
           statsContainer.innerHTML = `
           <ul class="poke-list">
-        
+        <li>Move 1:</li>
         <li><span class="stats">${
           pokemon.moves[0] ? pokemon.moves[0].move.name : ''
         }</span></li>
           </ul>
           <ul class="poke-list">
+          <li>Move 2:</li>
           <li><span class="stats">${
             pokemon.moves[1] ? pokemon.moves[1].move.name : ''
           }</span></li>
           </ul>
           <ul class="poke-list">
+          <li>Move 3:</li>
           <li><span class="stats">${
             pokemon.moves[2] ? pokemon.moves[2].move.name : ''
           }</span></li>
           </ul>
           <ul class="poke-list">
+          <li>Move 4:</li>
           <li><span class="stats">${
             pokemon.moves[3] ? pokemon.moves[3].move.name : ''
           }</span></li>
           </ul>
           <ul class="poke-list">
+          <li>Move 5:</li>
           <li><span class="stats">${
             pokemon.moves[4] ? pokemon.moves[4].move.name : ''
           }</span></li>
           </ul>
           <ul class="poke-list">
+          <li>Move 6:</li>
           <li><span class="stats">${
             pokemon.moves[5] ? pokemon.moves[5].move.name : ''
           }</span></li>

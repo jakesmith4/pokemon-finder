@@ -488,7 +488,6 @@ article .poke-type-2:empty {
 .tab-container {
   text-align: left;
   padding: 0 2rem;
-  margin-bottom: 1rem;
 }
 
 .tab {
@@ -507,9 +506,9 @@ article .poke-type-2:empty {
 }
 
 .poke-list {
-  margin-left: 2rem;
   margin: 0 0 0.2rem 2rem;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .poke-list:first-child {
@@ -525,7 +524,6 @@ article .poke-type-2:empty {
   font-weight: bold;
   margin-left: 0.5rem;
   display: inline-block;
-  /* color: var(--primary-400); */
   font-style: italic;
   text-transform: capitalize;
 }
