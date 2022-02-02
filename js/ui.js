@@ -151,8 +151,6 @@ class UI {
         </div>
         <div class="pokemon-stats">
 
-        
-
         <ul class="poke-list">
         <li>Weight:</li>
         <li class="stat"><span>${Math.floor(
@@ -174,8 +172,6 @@ class UI {
         </div>
       </article>
             `;
-          // Show All Tabs
-
           // Select All Articles
           const article = document.querySelectorAll('article');
 
